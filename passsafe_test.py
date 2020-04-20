@@ -68,6 +68,7 @@ class TestPassword(unittest.TestCase):
         self.assertEqual(len(User.user_list),2)
 
 
+
 if __name__ == '__main__':
     unittest.main()
     

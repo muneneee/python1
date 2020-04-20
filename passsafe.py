@@ -33,3 +33,6 @@ class User:
         method to display user details
         '''
         return cls.user_list
+
+
+    
