@@ -1,15 +1,14 @@
 class User:
     '''
-    class that generates new instances of passwords
+    class that generates new instances of users
     '''
     
     user_list = []
 
 
-    def __init__(self,name,username,account,password):
+    def __init__(self,name,password):
 
         self.name = name
-        self.username = username
         self.password = password
 
     def save_user(self):
@@ -35,27 +34,32 @@ class User:
 
 
 class Credentials:
-    accounts = []
+    '''
+    class for creating new instances of accounts
+    '''
+
+
+    account_list = []
 
 
     def __init__(self,username,account,accountpassword):
 
         self.username = username
         self.account = account
-        self.accountpassword = password
+        self.accountpassword = accountpassword
 
     def save_account(self):
         '''
         a method for saving the account
         '''
-        Credentials.accounts.append(self)
+        Credentials.account_list.append(self)
 
 
     def delete_account(self):
         '''
         method for deleting accounts
         '''
-        Credentials.accounts.remove(self)
+        Credentials.account_list.remove(self)
 
 
     @classmethod
@@ -63,4 +67,4 @@ class Credentials:
         '''
         method to display user accounts
         '''
-        return cls.accounts
+        return cls.account_list

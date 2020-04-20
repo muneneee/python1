@@ -1,5 +1,6 @@
 import unittest
 from passsafe import User
+from passsafe import Credentials
 
 class TestPassword(unittest.TestCase):
 
@@ -11,7 +12,7 @@ class TestPassword(unittest.TestCase):
         '''
         method to run before each test cases
         '''
-        self.new_user = User("Kevin","Muneneee","instagram","password")
+        self.new_user = User("Kevin","password")
 
     def tearDown(self):
         '''
@@ -25,8 +26,6 @@ class TestPassword(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_user.name,"Kevin")
-        self.assertEqual(self.new_user.username,"Muneneee")
-        self.assertEqual(self.new_user.account,"instagram")
         self.assertEqual(self.new_user.password,"password")
 
 
@@ -51,7 +50,7 @@ class TestPassword(unittest.TestCase):
         test for deleting users
         '''
         self.new_user.save_user()
-        test_user = User("Test","name","instagram","password")
+        test_user = User("Test","name")
         test_user.save_user()
 
         self.new_user.delete_user()
@@ -63,9 +62,34 @@ class TestPassword(unittest.TestCase):
         to check if we can save multiple users
         '''
         self.new_user.save_user()
-        test_user = User("Test","name","instagram","password")
+        test_user = User("Test","name")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
+
+
+class TestAccount(unittest.TestCase):
+
+
+    def setUp(self):
+
+        self.new_account = Credentials("muneneee","instagram","password")
+
+    
+    def tearDown(self):
+        Credentials.account_list = []
+
+    
+    def test_init(self):
+
+        self.assertEqual(self.new_account.username,"muneneee")
+        self.assertEqual(self.new_account.account,"instagram")
+        self.assertEqual(self.new_account.accountpassword,"password")
+
+    
+    def test_save_account(self):
+
+        self.new_account.save_account()
+        self.assertEqual(len(Credentials.account_list),1)
 
 
 

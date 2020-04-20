@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
 
-from user import User
+from passsafe import User
 import random
 
 def create_user(name,username,account,password):
