@@ -125,9 +125,9 @@ def main():
 
 
                 elif choice == "d":
-                   for user in del_account():
-                     print('\n')
-                     print("Your account has been deleted")
+                
+                   print('\n')
+                   print("Your account has been deleted")
                 
 
                 else:
