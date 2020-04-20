@@ -77,6 +77,8 @@ def main():
                 print("To add account, press: a")
                 print("-"*10)
                 print("To view accounts, press: v")
+                print("-"*10)
+                print("To delete accounts, press: d")
 
                 choice = input()
                 print('\n')
@@ -121,6 +123,11 @@ def main():
                     for user in display_accounts():
                         print(f"Account: {user.account} \nUsername: {user.username} \nPassword: {user.accountpassword}")
 
+
+                elif choice == "d":
+                    del_account()
+                    print('\n')
+                    print("Your account has been deleted")
                 
 
                 else:
