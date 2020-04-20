@@ -10,7 +10,6 @@ class User:
 
         self.name = name
         self.username = username
-        self.account = account
         self.password = password
 
     def save_user(self):
@@ -36,33 +35,32 @@ class User:
 
 
 class Credentials:
-    user_list = []
+    accounts = []
 
 
-    def __init__(self,name,username,account,password):
+    def __init__(self,username,account,accountpassword):
 
-        self.name = name
         self.username = username
         self.account = account
-        self.password = password
+        self.accountpassword = password
 
-    def save_user(self):
+    def save_account(self):
         '''
-        a method for saving the user
+        a method for saving the account
         '''
-        User.user_list.append(self)
+        Credentials.accounts.append(self)
 
 
-    def delete_user(self):
+    def delete_account(self):
         '''
-        method for deleting users
+        method for deleting accounts
         '''
-        User.user_list.remove(self)
+        Credentials.accounts.remove(self)
 
 
     @classmethod
-    def display_details(cls):
+    def display_account(cls):
         '''
-        method to display user details
+        method to display user accounts
         '''
-        return cls.user_list
+        return cls.accounts
