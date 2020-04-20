@@ -16,4 +16,5 @@ def del_user(user):
     user.delete_user()
 
 
-def 
+def display_details():
+    return User.display_details()
