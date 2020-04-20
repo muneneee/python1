@@ -58,6 +58,16 @@ class TestPassword(unittest.TestCase):
         self.assertEqual(len(User.user_list),1)
 
 
+    def test_save_multiple_users(self):
+        '''
+        to check if we can save multiple users
+        '''
+        self.new_user.save_user()
+        test_user = User("Test","name","instagram","password")
+        test_user.save_user()
+        self.assertEqual(len(User.user_list),2)
+
+
 if __name__ == '__main__':
     unittest.main()
     
