@@ -29,4 +29,16 @@ class TestPassword(unittest.TestCase):
         self.assertEqual(self.new_user.account,"instagram")
         self.assertEqual(self.new_user.password,"password")
 
+
+    def test_save_user(self):
+        '''
+        testing the save_user method
+        '''
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
+
+
+
+if __name__ == '__main__':
+    unittest.main()
     
