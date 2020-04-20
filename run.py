@@ -134,7 +134,7 @@ def main():
 
         else:
             print("Plese use the keys given")
-            
+            print('\n')
                     
 
 
