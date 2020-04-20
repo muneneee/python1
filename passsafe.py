@@ -33,6 +33,18 @@ class User:
         return cls.user_list
 
 
+    @classmethod
+    def find_by_number(cls,number):
+        '''
+        takes name and return user matching
+        '''
+        for user in cls.user_list:
+            if user.password == number:
+                return user
+
+
+
+
 class Credentials:
     '''
     class for creating new instances of accounts
