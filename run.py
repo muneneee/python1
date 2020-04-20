@@ -121,6 +121,16 @@ def main():
                     for user in display_accounts():
                         print(f"Account: {user.account} \nUsername: {user.username} \nPassword: {user.accountpassword}")
 
+                
+
+                else:
+                    print("please use the keys given")
+                    print('\n')
+            
+
+            else:
+                print("Invalid username or password")
+        
                     
 
 
