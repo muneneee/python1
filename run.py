@@ -24,6 +24,25 @@ def display_details():
 def find_user(number):
     return User.find_by_number(number)
 
+
+def create_account(account,username,accountpassword):
+    new_account = Credentials(account,username,accountpassword)
+    return new_account
+
+
+def save_account(user):
+    user.save_account()
+
+
+def del_account(user):
+    user.delete_account()
+
+
+def display_accounts():
+    return Credentials.display_accounts()
+
+
+
 def main():
     
     while True:
@@ -82,6 +101,23 @@ def main():
                     if pick == "g":
                         accountpassword = random.randint(10000,100000)
                         print(f"Password: {accountpassword}")
+
+                    elif pick == "p":
+                        print("Enter your password")
+                        accountpassword = input()
+
+                    else:
+                        print("please use keys given")
+
+                    save_account(create_account(account,username,accountpassword))
+                    print('\n')
+                    print(f"Account: {account} \nUsername:{username} \nPassword: {accountpassword}" )
+                
+
+                elif pick == "v":
+
+                    
+
 
 
 
