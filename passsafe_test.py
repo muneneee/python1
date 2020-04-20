@@ -38,6 +38,25 @@ class TestPassword(unittest.TestCase):
         self.assertEqual(len(User.user_list),1)
 
 
+    def test_display_details(self):
+        '''
+        tests for display_details method
+        '''
+        self.assertEqual(User.display_details(),User.user_list)
+
+
+
+    def test_delete_user(self):
+        '''
+        test for deleting users
+        '''
+        self.new_user.save_user()
+        test_user = User("Test","name","instagram","password")
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list),1)
+
 
 if __name__ == '__main__':
     unittest.main()
