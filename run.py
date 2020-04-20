@@ -114,9 +114,15 @@ def main():
                     print(f"Account: {account} \nUsername:{username} \nPassword: {accountpassword}" )
                 
 
-                elif pick == "v":
+                elif choice == "v":
+                    print("your accounts")
+                    print("-"*15)
+
+                    for user in display_accounts():
+                        print(f"Account: {user.account} \nUsername: {user.username} \nPassword: {user.accountpassword}")
 
                     
+
 
 
 
