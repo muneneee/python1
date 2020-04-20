@@ -108,6 +108,13 @@ class TestAccount(unittest.TestCase):
         self.assertEqual(len(Credentials.account_list),1)
 
 
+    def test_save_multiple_accounts(self):
+        self.new_account.save_account()
+        test_account = Credentials("Test","username","account")
+        test_account.save_account()
+        self.assertEqual(len(Credentials.account_list),2)
+
+
 if __name__ == '__main__':
     unittest.main()
     
