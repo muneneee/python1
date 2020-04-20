@@ -88,9 +88,14 @@ class TestAccount(unittest.TestCase):
     
     def test_save_account(self):
 
+
         self.new_account.save_account()
         self.assertEqual(len(Credentials.account_list),1)
 
+
+    def test_display_accounts(self):
+
+        self.assertEqual(Credentials.display_accounts(),Credentials.account_list)
 
 
 if __name__ == '__main__':

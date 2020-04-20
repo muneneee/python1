@@ -63,7 +63,7 @@ class Credentials:
 
 
     @classmethod
-    def display_account(cls):
+    def display_accounts(cls):
         '''
         method to display user accounts
         '''
